@@ -1,0 +1,13 @@
+.colors{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  transition: 0.3s;
+}
+.mainColors{
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+  width: 300px;
+  flex-wrap: wrap;
+}

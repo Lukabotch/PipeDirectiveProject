@@ -1,0 +1,19 @@
+<button (click)="loadUsers()" class="loadClass">Load Users</button>
+<h1 *ngIf="usersLoaded">loading...</h1>
+<div class="mainDiv">
+  <p *ngIf="userNames && userNames.length > 0" class="userNames">{{ "Users: " + userNames }}</p>
+  <div class="users">
+    <div
+      *ngFor="let item of users"
+      class="mainUser"
+      [ngClass]="selectClass(item.status)"
+      (click)="changeDivColor($event, item.status)"
+    >
+      <h4>{{ item.firstName + " " + item.lastName }}</h4>
+      <p>{{ "About " + item.firstName }}</p>
+      <p>{{item.birthDate | ageDistance}} years old</p>
+      <button [ngStyle]="selectStyle(item.status)">{{ item.status }}</button>
+    </div>
+  </div>
+  \
+</div>
